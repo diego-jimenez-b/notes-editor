@@ -1,0 +1,14 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+red='\033[0;31m'
+green='\033[0;32m'
+no_color='\033[0m'
+
+if npx lint-staged --quiet; then
+  echo -e "\n${green}SUCCESS: Lint-staged passed!\n${no_color}"
+  exit 0
+else
+  echo -e "\n${red}ERROR: Lint staged failed!\n${no_color}"
+  exit 1
+fi
