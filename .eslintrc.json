@@ -30,6 +30,8 @@
     "consistent-return": "off",
     "react/no-array-index-key": "off",
     "no-console": "error",
+    "import/prefer-default-export": "off",
+    "react/require-default-props": "off",
     "react/function-component-definition": [
       "error",
       { "namedComponents": ["arrow-function", "function-declaration"], "unnamedComponents": "arrow-function" }
