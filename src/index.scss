@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+}
+
+.ck {
+  .ck-toolbar {
+    border-width: 0 0 1px !important;
+  }
+  .ck-editor__editable_inline {
+    border: none;
+  }
+  .ck-editor__editable.ck-focused {
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .ck-editor {
+    overflow: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .ck-editor__main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .ck-editor__main > div {
+    flex-grow: 1;
+    padding: 30px;
+    width: min(900px, 100%);
+    margin: 0 auto;
+
+    & > *:first-child {
+      margin-top: 0;
+    }
+  }
+  .ck-editor__top {
+    transition: 0.3s !important;
+    height: 39px !important;
+    position: sticky;
+    top: 0;
+  }
+}

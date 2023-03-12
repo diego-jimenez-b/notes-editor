@@ -4,6 +4,7 @@ import { $MQ } from "../../theme";
 export const Container = styled.div<{ visible?: boolean }>`
   box-shadow: ${({ theme }) => theme.boxShadow.medium};
   background-color: ${({ theme }) => theme.color.NEUTRAL[100]};
+  flex-shrink: 0;
   width: 350px;
   transition: 0.5s;
   height: 100%;
