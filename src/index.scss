@@ -42,9 +42,15 @@ body {
     }
   }
   .ck-editor__top {
-    transition: 0.3s !important;
-    height: 39px !important;
+    transition: 0.3s;
+    height: 39px;
     position: sticky;
     top: 0;
+  }
+}
+
+@media not (hover: hover) {
+  * {
+    cursor: default !important;
   }
 }
