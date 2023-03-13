@@ -9,4 +9,5 @@ export const Backdrop = styled.div<IStyledProps>`
   top: 0;
   left: 0;
   opacity: ${({ opacity }) => opacity ?? 0.5};
+  z-index: 2;
 `;

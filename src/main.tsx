@@ -5,7 +5,7 @@ import App from "./App";
 import LayoutContextProvider from "./contexts/layout-context";
 import { theme } from "./theme";
 import "./normalize.css";
-import "./index.css";
+import "./index.scss";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

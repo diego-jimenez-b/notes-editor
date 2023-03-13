@@ -10,9 +10,12 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-react": "5.1.0",
+    "ckeditor5-custom-build": "github:dijim45/ckeditor-custom",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.8.2",
+    "sass": "1.59.2",
     "styled-components": "5.3.8"
   },
   "devDependencies": {
