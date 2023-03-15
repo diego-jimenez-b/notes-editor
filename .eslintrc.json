@@ -32,6 +32,7 @@
     "no-console": "error",
     "import/prefer-default-export": "off",
     "react/require-default-props": "off",
+    "@typescript-eslint/lines-between-class-members": "off",
     "react/function-component-definition": [
       "error",
       { "namedComponents": ["arrow-function", "function-declaration"], "unnamedComponents": "arrow-function" }
