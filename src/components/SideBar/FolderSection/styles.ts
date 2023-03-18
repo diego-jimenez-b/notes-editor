@@ -14,6 +14,7 @@ export const SelectedFolder = styled.div`
   min-width: 140px;
   min-height: 40px;
   display: flex;
+  position: relative;
   font-size: 14px;
   font-weight: 500;
   transition: 0.3s;

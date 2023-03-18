@@ -1,14 +1,22 @@
 import { PlusIcon, EditFileIcon, ChevronIcon } from "../../../icons";
+import FloatingSelect from "../../ui/FloatingSelect";
 import * as s from "./styles";
 
 const FolderSection = () => (
   <s.Container>
     <s.SelectedFolder>
-      <s.SelectIndicator>
-        <ChevronIcon />
-      </s.SelectIndicator>
+      <FloatingSelect
+        placeholder="Buscar..."
+        noOptionsMessage={({ inputValue }) => (inputValue ? "No se encontraron carpetas" : "Sin carpetas")}
+        render={(props) => (
+          <s.SelectIndicator {...props}>
+            <ChevronIcon />
+          </s.SelectIndicator>
+        )}
+      />
       <s.FolderName tabIndex={0}>Nueva-carpeta</s.FolderName>
     </s.SelectedFolder>
+
     <s.Action>
       <PlusIcon size={18} />
     </s.Action>
