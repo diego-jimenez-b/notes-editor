@@ -34,6 +34,7 @@ const EditableText = ({ initialValue, onChange, maxWidth, actionsRef }: IProps) 
       onChange={(e) => setInput(e.target.value)}
       onBlur={handleUpdate}
       onKeyDown={(e) => {
+        e.stopPropagation();
         if (e.key === "Enter") handleUpdate();
       }}
       maxWidth={maxWidth}

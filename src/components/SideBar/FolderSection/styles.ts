@@ -37,6 +37,7 @@ export const SelectIndicator = styled(BaseButton)`
   border-right: 1px solid ${({ theme }) => theme.color.NEUTRAL[400]};
   display: block;
   align-self: stretch;
+  flex-shrink: 0;
   font-size: 17px;
 
   svg {
@@ -46,10 +47,11 @@ export const SelectIndicator = styled(BaseButton)`
 
 export const Action = styled(BaseButton)`
   background-color: ${({ theme }) => theme.color.PRIMARY[900]};
+  color: white;
   border-radius: 3px;
   width: 24px;
   height: 24px;
-  color: white;
+  flex-shrink: 0;
 
   svg {
     vertical-align: middle;
