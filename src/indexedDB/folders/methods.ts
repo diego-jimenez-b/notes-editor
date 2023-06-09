@@ -1,7 +1,11 @@
 import { db } from "..";
 import { IFolder } from "../types";
+import { generateId } from "../../utils/generate-id";
 
-export const createFolder = (folder: IFolder) => db.folders.add(folder);
+export const createFolder = async (folder?: IFolder) => {
+  const id = await db.folders.add(folder || { id: generateId(), name: "Nueva carpeta" });
+  return id as string;
+};
 
 export const editFolderName = (id: string, name: string) => db.folders.update(id, { name });
 
