@@ -8,6 +8,7 @@ interface IProps {
 
 const FloatingSelect = <Option, IsMulti extends boolean = false, Group extends GroupBase<Option> = GroupBase<Option>>({
   render,
+  onChange,
   ...selectProps
 }: Props<Option, IsMulti, Group> & IProps) => {
   const [show, setShow] = useState(false);
@@ -16,7 +17,16 @@ const FloatingSelect = <Option, IsMulti extends boolean = false, Group extends G
       {render({ onClick: () => setShow(true) })}
       {show && (
         <s.SelectWrapper>
-          <ReactSelect onBlur={() => setShow(false)} menuIsOpen autoFocus {...selectProps} />
+          <ReactSelect
+            autoFocus
+            menuIsOpen
+            onBlur={() => setShow(false)}
+            onChange={(selected, action) => {
+              setShow(false);
+              if (onChange) onChange(selected, action);
+            }}
+            {...selectProps}
+          />
         </s.SelectWrapper>
       )}
     </>

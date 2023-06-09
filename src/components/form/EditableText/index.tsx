@@ -2,7 +2,7 @@ import { useCallback, useEffect, useImperativeHandle, useRef, useState } from "r
 import { IProps } from "./types";
 import * as s from "./styles";
 
-const EditableText = ({ initialValue, onChange, maxWidth, actionsRef }: IProps) => {
+const EditableText = ({ initialValue, onChange, maxWidth, disabled, actionsRef }: IProps) => {
   const [edit, setEdit] = useState(false);
   const [input, setInput] = useState(initialValue);
   const inputRef = useRef<null | HTMLInputElement>(null);
@@ -18,7 +18,7 @@ const EditableText = ({ initialValue, onChange, maxWidth, actionsRef }: IProps) 
     setEdit(false);
   };
 
-  useImperativeHandle(actionsRef, () => ({ setEdit }), []);
+  useImperativeHandle(actionsRef, () => (!disabled ? { setEdit } : { setEdit: () => {} }), [disabled]);
 
   useEffect(() => {
     if (edit && inputRef.current) {
@@ -43,10 +43,14 @@ const EditableText = ({ initialValue, onChange, maxWidth, actionsRef }: IProps) 
     <s.TextWrapper
       tabIndex={0}
       role="button"
-      onClick={() => setEdit(true)}
-      onKeyDown={(e) => {
-        if (e.key === "Enter") setEdit(true);
-      }}
+      {...(!disabled
+        ? {
+            onClick: () => setEdit(true),
+            onKeyDown: (e) => {
+              if (e.key === "Enter") setEdit(true);
+            },
+          }
+        : { "aria-disabled": true })}
     >
       {input}
     </s.TextWrapper>

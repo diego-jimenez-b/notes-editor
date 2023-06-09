@@ -13,6 +13,7 @@
     "@ckeditor/ckeditor5-react": "5.1.0",
     "ckeditor5-custom-build": "github:dijim45/ckeditor-custom",
     "dexie": "3.2.3",
+    "dexie-react-hooks": "^1.1.6",
     "nanoid": "^3.3.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",

@@ -9,6 +9,7 @@ function App() {
         createRoutesFromElements(
           <Route path="/" element={<Layout />}>
             <Route path="notes/:noteId" element={<Editor />} />
+            <Route path="folders/:folderId" element={<Editor />} />
             <Route path="folders/:folderId/notes/:noteId" element={<Editor />} />
           </Route>
         )

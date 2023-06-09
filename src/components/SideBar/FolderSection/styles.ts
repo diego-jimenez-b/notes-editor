@@ -30,6 +30,18 @@ export const FolderName = styled.div`
   display: grid;
   place-content: center;
   padding: 3px 12px;
+
+  &[aria-disabled="true"] {
+    color: ${({ theme }) => theme.color.NEUTRAL[500]};
+
+    :hover {
+      background-color: ${({ theme }) => theme.color.NEUTRAL[200]};
+    }
+    &,
+    span {
+      cursor: not-allowed;
+    }
+  }
 `;
 
 export const SelectIndicator = styled(BaseButton)`
@@ -56,7 +68,10 @@ export const Action = styled(BaseButton)`
   svg {
     vertical-align: middle;
   }
-  :hover {
+  :hover:not(:disabled) {
     background-color: ${({ theme }) => theme.color.PRIMARY[700]};
+  }
+  :disabled {
+    opacity: 0.5;
   }
 `;
