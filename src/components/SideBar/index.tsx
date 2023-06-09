@@ -1,5 +1,6 @@
 import { useLayoutCtx } from "../../contexts/layout-context";
 import BackDrop from "../Backdrop";
+import FolderSection from "./FolderSection";
 import * as s from "./styles";
 
 const SideBar = () => {
@@ -7,7 +8,9 @@ const SideBar = () => {
 
   return (
     <>
-      <s.Container visible={menuActive}>SideBar</s.Container>
+      <s.Container visible={menuActive}>
+        <FolderSection />
+      </s.Container>
       {!isDesktop && menuActive && <BackDrop onClick={toggleMenu} opacity={0} />}
     </>
   );

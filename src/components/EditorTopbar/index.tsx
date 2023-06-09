@@ -1,10 +1,11 @@
 import { useLayoutCtx } from "../../contexts/layout-context";
 import { ChevronIcon, MenuIcon } from "../../icons";
 import { SetState } from "../../types/utilityTypes";
+import EditableText from "../form/EditableText";
 import * as s from "./styles";
 
 interface IProps {
-  title?: string;
+  title: string;
   showToolbar: boolean;
   setShowToolbar: SetState<boolean>;
 }
@@ -15,7 +16,9 @@ const EditorTopbar = ({ title, showToolbar, setShowToolbar }: IProps) => {
   return (
     <s.Container>
       {!isDesktop && <MenuIcon onClick={toggleMenu} />}
-      <s.Content>{title}</s.Content>
+      <s.Content>
+        <EditableText initialValue={title} onChange={() => {}} />
+      </s.Content>
       <ChevronIcon
         onClick={() => setShowToolbar((s) => !s)}
         style={{ transform: `rotate(${showToolbar ? 0 : -90}deg)` }}
